@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: odoo-10-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: odoo-10
+    spec:
+      containers:
+      - name: odoo-10
+        image: gcr.io/odoo-10-1/odoo-10:v1
+        ports:
+        - containerPort: 8069
